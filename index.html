@@ -2,17 +2,16 @@
 <html>
 <head>
     <script>
-function getParameterByName(name) {
-    var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
-    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+const urlParams = new URLSearchParams(location.search);
+
+const queryParams = {}
+for (const [key, value] of urlParams) {
+    queryParams[key] = value;
 }
     </script>
 
     <script>
-  dataLayer = [{
-    'pageCategory': 'signup',
-    'visitorType': 'high-value'
-  }];
+  dataLayer = [queryParams];
 </script>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -33,8 +32,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 Hello World!
 
+<input type=button onClick="location.href='http://httpbin.org/get'+window.location.search" value='click here'>
+
 <script>
-    document.write(getParameterByName("test"))
+    window.location.search
 </script>
 </body>
 </html>
