@@ -2,6 +2,13 @@
 <html>
 <head>
     <script>
+function getParameterByName(name) {
+    var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+}
+    </script>
+
+    <script>
   dataLayer = [{
     'pageCategory': 'signup',
     'visitorType': 'high-value'
@@ -25,5 +32,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-MTKZTDM');</script>
 <!-- End Google Tag Manager -->
 Hello World!
+
+<script>
+    document.write(getParameterByName("test"))
+</script>
 </body>
 </html>
