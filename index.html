@@ -37,5 +37,15 @@ Hello World!
 <script>
     window.location.search
 </script>
+
+<script>
+function onFrameLoad() {
+  alert('myframe is loaded');
+};
+</script>
+
+<iframe src="www.google.com" height="300" width="250" title="Iframe Example"
+        onload=onclick="dataLayer.push({'event': 'iframe-load'});"></iframe>
+
 </body>
 </html>
