@@ -32,7 +32,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 Hello World!
 
-<input type=button onClick="location.href='http://httpbin.org/get'+window.location.search" value='click here'>
+<script>
+function httpGet()
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", "http://httpbin.org/get"+window.location.search, false );
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+}
+</script>
+
+<input type=button onClick="httpGet()" value='click here'>
 
 <iframe src="ad.png" height="250" width="300" title="Iframe Example"
         onload="dataLayer.push({'event': 'iframe-load'});"></iframe>
