@@ -36,7 +36,7 @@ Hello World!
 function httpGet()
 {
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", "http://httpbin.org/get"+window.location.search, false );
+    xmlHttp.open( "GET", "https://httpbin.org/get"+window.location.search, false );
     xmlHttp.send( null );
     return xmlHttp.responseText;
 }
